@@ -12,30 +12,31 @@
 <body>
   <h1>Build your pizza!</h1>
   <div class="container">
-    <h3>Select your toppings</h3>
     <form id="createOrder">
-      <div class="toppings">
-      <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
-      <input type="checkbox" name="topping" value="Sausage">Sausage<br>
-      <input type="checkbox" name="topping" value="Bacon">Bacon<br>
-      <input type="checkbox" name="topping" value="Mushroom">Mushroom<br>
-      <input type="checkbox" name="topping" value="Onion">Onion<br>
-      <input type="checkbox" name="topping" value="Black Olives">Black Olives<br>
-      <input type="checkbox" name="topping" value="Garlic">Garlic<br>
-      <input type="checkbox" name="topping" value="Bell Peppers">Bell Peppers<br>
+      <h3>Choose a size</h3>
+      <div class="form-group" id="size">
+        <input type="radio" id="size" name="size" value="Small" checked><img src="img/pizzaSize.png" id="small">Small</input>
+        <br>
+        <input type="radio" id="size" name="size" value="Medium"><img src="img/pizzaSize.png" id="medium">Medium</input>
+        <br>
+        <input type="radio" id="size" name="size" value="Large"><img src="img/pizzaSize.png" id="large">Large</input>
+        <br>
+        <input type="radio" id="size" name="size" value="Jumbo"><img src="img/pizzaSize.png" id="jumbo">Jumbo</input>
+        <br>
+      </div>
+      <h3>Select your toppings</h3>
+      <div class="form-group" id="toppings">
+      <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
+      <input type="checkbox" name="toppings" value="Sausage">Sausage<br>
+      <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
+      <input type="checkbox" name="toppings" value="Mushroom">Mushroom<br>
+      <input type="checkbox" name="toppings" value="Onion">Onion<br>
+      <input type="checkbox" name="toppings" value="Black Olives">Black Olives<br>
+      <input type="checkbox" name="toppings" value="Garlic">Garlic<br>
+      <input type="checkbox" name="toppings" value="Bell Peppers">Bell Peppers<br>
       <!-- <input type="checkbox" name="topping" value="Pineapple">Pineapple<br>-->
       </div>
-      <div class="size">
-      <input type="radio" id="size" name="size" value="Small" checked><img src="img/pizzaSize.png" id="small">Small</input>
-       <br>
-       <input type="radio" id="size" name="size" value="Medium"><img src="img/pizzaSize.png" id="medium">Medium</input>
-       <br>
-       <input type="radio" id="size" name="size" value="Large"><img src="img/pizzaSize.png" id="large">Large</input>
-       <br>
-       <input type="radio" id="size" name="size" value="Jumbo"><img src="img/pizzaSize.png" id="jumbo">Jumbo</input>
-       <br>
-      </div>
-      <div class="deliveryTime">
+      <div class="form-group" id="deliveryTime">
         <h3>Schedule your delivery time</h3>
         <select id="time">
           <option value="11AM">12PM</option>
@@ -54,7 +55,8 @@
       <button type="submit" class="btn btn-info">Place Order</button>
     </form>
     <div id="createdPizza">
-      <p><span id="toppings"></span><br>
+      <p><span id="size"></span><br>
+        <span id="toppings"></span><br>
         <span id="time"></span><br>
         <span id="price"></span><br>
       </p>

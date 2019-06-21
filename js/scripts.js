@@ -1,22 +1,20 @@
-//Business Logic for Tickets
-Learn more or give us feedback
-// Business Logic for TicketBook
+// Business Logic for pizzaOrders
 function PizzaOrders () {
   this.pizzas = [],
   this.pizzaId = 0
 }
 
-TicketBook.prototype.Pizza = function(pizza) {
+PizzaOrders.prototype.Pizza = function(pizza) {
   pizza.id = this.assignId();
   this.pizzas.push(ticket);
 }
 
-TicketBook.prototype.assignId = function() {
+PizzaOrders.prototype.assignId = function() {
   this.pizzaId += 1;
   return this.pizzaId;
 }
 
-TicketBook.prototype.findPizza = function(id) {
+PizzaOrders.prototype.findPizza = function(id) {
   for (var i=0; i< this.pizzas.length; i++) {
     if (this.pizzas[i]) {
       if (this.pizzas[i].id == id) {
@@ -27,7 +25,7 @@ TicketBook.prototype.findPizza = function(id) {
   return false;
 }
 
-TicketBook.prototype.deletePizza = function(id) {
+PizzaOrders.prototype.deletePizza = function(id) {
   for (var i=0; i<this.pizzas.length; i++) {
     if (this.pizzas[i]) {
       if (this.pizzas[i].id == id) {
@@ -39,8 +37,7 @@ TicketBook.prototype.deletePizza = function(id) {
   return false;
 }
 
-var ticketIndex = new TicketBook();
-
+var pizzaIndex = new PizzaOrders();
 function Pizzas (size, toppings, time, price) {
   this.size = size,
   this.toppings = toppings;
@@ -52,29 +49,42 @@ function calcPrice(size, toppings, time) {
   var pizzaPrice = 7;
   if (size.includes("medium")) {
     pizzaPrice += 2;
-  } else if (size.includes("large")) {
+  } if (size.includes("large")) {
     pizzaPrice += 4;
-  } else if (size.includes("jumbo")) {
-    ticketPrice +=6;
+  } if (size.includes("jumbo")) {
+    pizzaPrice +=6;
   }
 
   // if(toppings.includes("Sausage")) {
-  //   ticketPrice -= 2;
+  //   pizzaPrice += 2;
   // }
-  // if(age === "Child" || age === "Senior") {
-  //   ticketPrice -= 3;
-  // }
-  return ticketPrice;
+  if(time.includes("9PM" || "10PM")) {
+    pizzaPrice += 2;
+  }
+  return pizzaPrice;
+}
+
+function addOutput (arrayNum) {
+  $("span#size").html(pizzaIndex.pizzas[arrayNum].size);
+  $("span#toppings").html(pizzaIndex.pizzas[arrayNum].toppings);
+  $("span#time").html(pizzaIndex.pizzas[arrayNum].time);
+  $("span#price").html("$" + pizzaIndex.pizzas[arrayNum].price);
 }
 
 $(document).ready(function() {
   $("form#createOrder").submit(function(event) {
     event.preventDefault();
-var inputtedSize = $("input:radio[name=movie]:checked").val();
-var inputtedToppings = $("select#time").val();
-var inputtedTime = $("input:radio[name=age]:checked").val();
+var inputtedSize = $("input:radio[name=size]:checked").val();
+var inputtedToppings = $("input:checkbox[name=toppings]:checked").val();
+var inputtedTime = $("select#time").val();
 var pizzaTotal = calcPrice(inputtedSize, inputtedToppings, inputtedTime);
-var newPizza = new Pizzas (inputtedSize, inputtedToppings, inputtedTime, pizzaTotal);
-pizzaIndex.addPizza(newPizza);
-var prevID = ticketIndex.ticketId - 1;
-addOutput(prevID);
+// var newPizza = new Pizzas (inputtedSize, inputtedToppings, inputtedTime, pizzaTotal);
+// pizzaIndex.addPizza(newPizza);
+// var prevID = pizzaIndex.pizzaId - 1;
+// addOutput(prevID);
+
+// alert(inputtedSize);
+// alert(inputtedTime);
+alert(inputtedToppings);
+});
+});
