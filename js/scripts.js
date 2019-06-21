@@ -1,109 +1,60 @@
 // Business Logic for pizzaOrders
 
-// function PizzaOrders () {
-//   this.pizzas = [],
-//   this.pizzaId = 0
-// }
-//
-// PizzaOrders.prototype.addPizza = function(pizza) {
-//   pizza.id = this.assignId();
-//   this.pizzas.push(pizza);
-// }
-//
-// PizzaOrders.prototype.assignId = function() {
-//   this.pizzaId += 1;
-//   return this.pizzaId;
-// }
 
-// PizzaOrders.prototype.findPizza = function(id) {
-//   for (var i=0; i< this.pizzas.length; i++) {
-//     if (this.pizzas[i]) {
-//       if (this.pizzas[i].id == id) {
-//         return this.pizzas[i];
-//       }
-//     }
-//   };
-//   return false;
-// }
-
-// PizzaOrders.prototype.deletePizza = function(id) {
-//   for (var i=0; i<this.pizzas.length; i++) {
-//     if (this.pizzas[i]) {
-//       if (this.pizzas[i].id == id) {
-//         delete this.pizzas[i];
-//         return true;
-//       }
-//     }
-//   };
-//   return false;
-// }
-
-// var pizzaIndex = new PizzaOrders();
-
-function Pizzas (size, toppings, time, price) {
+function Pizzas (size, toppings, price) {
   this.size = size,
   this.toppings = toppings,
-  this.time = time,
   this.price = 0
 }
 
-Pizzas.prototype.calcPrice = function() {
-  // var pizzaPrice = 7;
 
-  //calculate size portion of price
-  if (this.size.includes("small")) {
+
+//calculate size portion of price
+Pizzas.prototype.calcSizePrice = function() {
+
+  if (this.size.includes("Small")) {
     this.price += 6
-  } if (this.size.includes("medium")) {
+  } else if (this.size.includes("Medium")) {
     this.price += 8
-  } if (this.size.includes("large")) {
+  } else if (this.size.includes("Large")) {
     this.price += 10
-  } if (this.size.includes("jumbo")) {
+  } else { (this.size.includes("Jumbo"))
     this.price += 12
   }
+}
+
   //calculate toppings portion of price
-  if(toppings.length <= 2) {
+Pizzas.prototype.calcToppingPrice = function() {
+  if(this.toppings.length <= 1) {
     this.price += 0;
-  } if (toppings.length >= 3) {
+  } else if (toppings.length >= 3) {
     this.price += 2;
-  } if (toppings.length >= 4) {
-    this.price += 3;
-  } if (toppings.length >= 5) {
+  } else if (toppings.length >= 5) {
     this.price += 4;
-  } if (toppings.length >= 6) {
+  } else if (toppings.length >= 7) {
+    this.price += 6;
+  } else {
     this. price += 8
-   return this.price;
-   console.log(this.price);
 }
 }
+console.log(this.price);
 
-Pizzas.prototype.pizzaPrice = function() {
-  return "$" + this.price;
-}
 
-function addOutput (arrayNum) {
-  $("span#size").html(size);
-  $("span#toppings").html(toppings);
-  // $("span#time").html(pizzaIndex.pizzas[arrayNum].time);
-  $("span#price").html("$" + pizzaIndex.pizzas[arrayNum].price);
-}
+//User Interface
 
 $(document).ready(function() {
   $("form#createOrder").submit(function(event) {
     event.preventDefault();
 var inputtedSize = $("input:radio[name=size]:checked").val();
-var inputtedToppings = []; $("input:checkbox[name=toppings]:checked").each(function() {inputtedToppings.push($(this).val());})
-// var inputtedTime = $("select#time").val();
-// var pizzaTotal = calcPrice(inputtedSize, inputtedToppings, inputtedTime);
-var newPizza = new Pizzas (inputtedSize, inputtedToppings);
+var inputtedToppings = []; $("input:checkbox[name=toppings]:checked").each(function() {inputtedToppings.push($(this).val());
+})
 
-newPizza.calcPrice();
-alert(pizzaPrice);
-// pizzaIndex.addPizza(newPizza);
-// var prevID = pizzaIndex.pizzaId - 1;
-// addOutput(prevID);
+var newPizza = new Pizzas (inputtedSize, inputtedToppings, 0);
 
-// alert(inputtedSize);
-// alert(inputtedTime);
-// alert(inputtedToppings);
+newPizza.calcSizePrice();
+newPizza.calcToppingPrice();
+
+$("span#orderTotal").html("Your order total is $" + newPizza.price)
+
 });
 });
