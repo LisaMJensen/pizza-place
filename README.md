@@ -1,12 +1,12 @@
-# _{Application Name}_
+# _Pizza Place_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _This is a website that uses input a pizza order and receive a calculated price, June 21st, 2019_
 
-#### By _**{List of contributors}**_
+#### By _**Lisa Jensen**_
 
 ## Description
 
-_{This is a detailed description of your application. Its purpose and usage.  Give as much detail as needed to explain what the application does, and any other information you want users or other developers to have. }_
+_This website utilizes objects, constructors, and prototype methods to take user input and calculate a _
 
 ## Setup/Installation Requirements
 

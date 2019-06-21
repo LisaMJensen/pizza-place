@@ -25,19 +25,16 @@ Pizzas.prototype.calcSizePrice = function() {
 
   //calculate toppings portion of price
 Pizzas.prototype.calcToppingPrice = function() {
-  if(this.toppings.length <= 1) {
-    this.price += 0;
-  } else if (toppings.length >= 3) {
-    this.price += 2;
-  } else if (toppings.length >= 5) {
-    this.price += 4;
-  } else if (toppings.length >= 7) {
+  if(this.toppings.length > 6) {
     this.price += 6;
-  } else {
-    this. price += 8
+  } else if (this.toppings.length > 4) {
+    this.price += 4;
+  } else if (this.toppings.length > 2) {
+    this.price += 2;
+  } else { this.price += 0;
+  }
 }
-}
-console.log(this.price);
+
 
 
 //User Interface
@@ -54,7 +51,7 @@ var newPizza = new Pizzas (inputtedSize, inputtedToppings, 0);
 newPizza.calcSizePrice();
 newPizza.calcToppingPrice();
 
-$("span#orderTotal").html("Your order total is $" + newPizza.price)
+$("span#orderTotal").html("Your order total is $" + newPizza.price + "<br> Selected Toppings: " + newPizza.toppings.toString(" "));
 
 });
 });
