@@ -1,45 +1,42 @@
 
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-<link href="css/styles.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
-<script src="js/jquery-3.4.1.js"></script>
-<script src="js/scripts.js"></script>
-<meta charset="utf-8">
-<title>Pizza Place</title>
-</head>
-<body>
+ <html lang="en" dir="ltr">
+ <head>
+ <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+ <link href="css/styles.css" rel="stylesheet" type="text/css">
+ <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+ <script src="js/jquery-3.4.1.js"></script>
+ <script src="js/scripts.js"></script>
+ <meta charset="utf-8">
+ <title>Pizza Place</title>
+ </head>
+ <body>
   <h1>Build your pizza!</h1>
-  <div class="container">
+   <div class="container">
     <div class="row">
-    <form id="createOrder">
-      <h3>Choose a size</h3>
-      <div class="form-group" id="size">
-        <input type="radio" id="size" name="size" value="Small" checked><img src="img/pizzaSize.png" id="small">Small</input>
+      <form id="createOrder">
+        <h3>Choose a size</h3>
+        <div class="form-group" id="size">
+          <input type="radio" id="size" name="size" value="Small" checked><img src="img/pizzaSize.png" id="small">Small</input>
 
-        <input type="radio" id="size" name="size" value="Medium"><img src="img/pizzaSize.png" id="medium">Medium</input>
+          <input type="radio" id="size" name="size" value="Medium"><img src="img/pizzaSize.png" id="medium">Medium</input>
 
-        <input type="radio" id="size" name="size" value="Large"><img src="img/pizzaSize.png" id="large">Large</input>
+          <input type="radio" id="size" name="size" value="Large"><img src="img/pizzaSize.png" id="large">Large</input>
 
-        <input type="radio" id="size" name="size" value="Jumbo"><img src="img/pizzaSize.png" id="jumbo">Jumbo</input>
-
-        <div>
+          <input type="radio" id="size" name="size" value="Jumbo"><img src="img/pizzaSize.png" id="jumbo">Jumbo</input>
+        </div>
       </div>
       <h3>Select your toppings</h3>
       <div class="form-group" id="toppings">
-      <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
-      <input type="checkbox" name="toppings" value="Sausage">Sausage<br>
-      <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
-      <input type="checkbox" name="toppings" value="Mushroom">Mushroom<br>
-      <input type="checkbox" name="toppings" value="Onion">Onion<br>
-      <input type="checkbox" name="toppings" value="Black Olives">Black Olives<br>
-      <input type="checkbox" name="toppings" value="Garlic">Garlic<br>
-      <input type="checkbox" name="toppings" value="Bell Peppers">Bell Peppers<br>
-
+        <input type="checkbox" name="toppings" value="Pepperoni">Pepperoni<br>
+        <input type="checkbox" name="toppings" value="Sausage">Sausage<br>
+        <input type="checkbox" name="toppings" value="Bacon">Bacon<br>
+        <input type="checkbox" name="toppings" value="Mushroom">Mushroom<br>
+        <input type="checkbox" name="toppings" value="Onion">Onion<br>
+        <input type="checkbox" name="toppings" value="Black Olives">Black Olives<br>
+        <input type="checkbox" name="toppings" value="Garlic">Garlic<br>
+        <input type="checkbox" name="toppings" value="Bell Peppers">Bell Peppers<br>
       </div>
-
       <button type="submit" class="btn btn-info">Place Order</button>
     </form>
     <div id="createdPizza">
