@@ -25,11 +25,11 @@ Pizzas.prototype.calcSizePrice = function() {
 
   //calculate toppings portion of price
 Pizzas.prototype.calcToppingPrice = function() {
-  if(this.toppings.length > 6) {
+  if(this.toppings.length > 5) {
     this.price += 6;
-  } else if (this.toppings.length > 4) {
+  } else if (this.toppings.length > 3) {
     this.price += 4;
-  } else if (this.toppings.length > 2) {
+  } else if (this.toppings.length > 1) {
     this.price += 2;
   } else { this.price += 0;
   }
