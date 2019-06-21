@@ -1,0 +1,23 @@
+#small{
+height: 70px;
+width: auto;
+}
+
+#medium{
+  height: 100px;
+  width: auto;
+}
+
+#large{
+  height: 130px;
+  width: auto;
+}
+
+#jumbo{
+  height: 160px;
+  width: auto;
+}
+
+body {
+  background-color: lightblue;
+}
