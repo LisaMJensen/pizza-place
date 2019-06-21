@@ -10,5 +10,44 @@
 <title>Pizza Place</title>
 </head>
 <body>
+  <h1>Build your pizza!</h1>
+  <div class="container">
+    <h3>Select your toppings</h3>
+    <form id="createOrder">
+      <div class="toppings">
+      <input type="checkbox" name="topping" value="Pepperoni">Pepperoni<br>
+      <input type="checkbox" name="topping" value="Sausage">Sausage<br>
+      <input type="checkbox" name="topping" value="Bacon">Bacon<br>
+      <input type="checkbox" name="topping" value="Mushroom">Mushroom<br>
+      <input type="checkbox" name="topping" value="Onion">Onion<br>
+      <input type="checkbox" name="topping" value="Black Olives">Black Olives<br>
+      <input type="checkbox" name="topping" value="Garlic">Garlic<br>
+      <input type="checkbox" name="topping" value="Bell Peppers">Bell Peppers<br>
+      </div>
+      <div class="deliveryTime">
+        <h3>Schedule your delivery time</h3>
+        <select id="time">
+          <option value="11AM">12PM</option>
+          <option value="9AM">1PM</option>
+          <option value="2PM">2PM</option>
+          <option value="4PM">3PM</option>
+          <option value="6PM">4PM</option>
+          <option value="8PM">5PM</option>
+          <option value="10PM">6PM</option>
+          <option value="10PM">7PM</option>
+          <option value="10PM">8PM</option>
+          <option value="10PM">9PM</option>
+          <option value="10PM">10PM</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-info">Place Order</button>
+    </form>
+    <div id="createdPizza">
+      <p><span id="toppings"></span><br>
+        <span id="time"></span><br>
+        <span id="price"></span><br>
+      </p>
+    </div>
+  </div>
 </body>
 </html>
