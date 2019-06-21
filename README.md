@@ -11,8 +11,7 @@ _This website utilizes objects, constructors, and prototype methods to take user
 ### Specs
 | Spec | Input | Output |
 | :-------------     | :------------- | :------------- |
-| **Program gathers user input and returns a calculated pizza price** | User input: "large with sausage, bacon, and mushroom" | Output: "Your order total is $12
-Selected Toppings: Sausage, Bacon, Mushroom" |
+| **Program gathers user input and returns a calculated pizza price** | User input: "large with sausage, bacon, and mushroom" | Output: "Your order total is $12 Selected Toppings: Sausage, Bacon, Mushroom" |
 
 ## Setup/Installation Requirements
 
