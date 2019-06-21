@@ -75,9 +75,14 @@ Pizzas.prototype.calcPrice = function() {
    console.log(this.price);
 }
 }
+
+Pizzas.prototype.pizzaPrice = function() {
+  return "$" + this.price;
+}
+
 function addOutput (arrayNum) {
-  $("span#size").html(pizzaIndex.pizzas[arrayNum].size);
-  $("span#toppings").html(pizzaIndex.pizzas[arrayNum].toppings);
+  $("span#size").html(size);
+  $("span#toppings").html(toppings);
   // $("span#time").html(pizzaIndex.pizzas[arrayNum].time);
   $("span#price").html("$" + pizzaIndex.pizzas[arrayNum].price);
 }
@@ -86,13 +91,14 @@ $(document).ready(function() {
   $("form#createOrder").submit(function(event) {
     event.preventDefault();
 var inputtedSize = $("input:radio[name=size]:checked").val();
-var inputtedToppings = $("input:checkbox[name=toppings]:checked").val();
-var inputtedTime = $("select#time").val();
-var pizzaTotal = calcPrice(inputtedSize, inputtedToppings, inputtedTime);
-var newPizza = new Pizzas (inputtedSize, inputtedToppings, inputtedTime, pizzaTotal);
+var inputtedToppings = []; $("input:checkbox[name=toppings]:checked").each(function() {inputtedToppings.push($(this).val());})
+// var inputtedTime = $("select#time").val();
+// var pizzaTotal = calcPrice(inputtedSize, inputtedToppings, inputtedTime);
+var newPizza = new Pizzas (inputtedSize, inputtedToppings);
 
 newPizza.calcPrice();
-//pizzaIndex.addPizza(newPizza);
+alert(pizzaPrice);
+// pizzaIndex.addPizza(newPizza);
 // var prevID = pizzaIndex.pizzaId - 1;
 // addOutput(prevID);
 
