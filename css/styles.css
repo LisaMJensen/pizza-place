@@ -1,23 +1,30 @@
 #small{
 height: 70px;
 width: auto;
+padding-right: 10px;
 }
 
 #medium{
   height: 100px;
   width: auto;
+  padding-right: 10px;
 }
 
 #large{
   height: 130px;
   width: auto;
+  padding-right: 10px;
 }
 
 #jumbo{
   height: 160px;
   width: auto;
+  padding-right: 10px;
 }
 
+#size {
+  padding: 20px;
+}
 body {
   background-color: lightblue;
 }

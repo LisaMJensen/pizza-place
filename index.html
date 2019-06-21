@@ -12,17 +12,19 @@
 <body>
   <h1>Build your pizza!</h1>
   <div class="container">
+    <div class="row">
     <form id="createOrder">
       <h3>Choose a size</h3>
       <div class="form-group" id="size">
         <input type="radio" id="size" name="size" value="Small" checked><img src="img/pizzaSize.png" id="small">Small</input>
-        <br>
+
         <input type="radio" id="size" name="size" value="Medium"><img src="img/pizzaSize.png" id="medium">Medium</input>
-        <br>
+
         <input type="radio" id="size" name="size" value="Large"><img src="img/pizzaSize.png" id="large">Large</input>
-        <br>
+
         <input type="radio" id="size" name="size" value="Jumbo"><img src="img/pizzaSize.png" id="jumbo">Jumbo</input>
-        <br>
+
+        <div>
       </div>
       <h3>Select your toppings</h3>
       <div class="form-group" id="toppings">
@@ -36,7 +38,7 @@
       <input type="checkbox" name="toppings" value="Bell Peppers">Bell Peppers<br>
       <!-- <input type="checkbox" name="topping" value="Pineapple">Pineapple<br>-->
       </div>
-      <div class="form-group" id="deliveryTime">
+      <!-- <div class="form-group" id="deliveryTime">
         <h3>Schedule your delivery time</h3>
         <select id="time">
           <option value="11AM">12PM</option>
@@ -51,16 +53,31 @@
           <option value="10PM">9PM</option>
           <option value="10PM">10PM</option>
         </select>
-      </div>
+      </div> -->
       <button type="submit" class="btn btn-info">Place Order</button>
     </form>
     <div id="createdPizza">
-      <p><span id="size"></span><br>
+      <p>
+        <span id="size"></span><br>
         <span id="toppings"></span><br>
         <span id="time"></span><br>
         <span id="price"></span><br>
       </p>
     </div>
   </div>
+  <div class="modal" tabindex="-1" role="dialog" id="alertModal">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Error!</h5>
+            </div>
+            <div class="modal-body">
+              <p>Please select a size before building your pizza.</p>
+            </div>
+            <div class="modal-footer">
+            <button type="button" id="buttonClose" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
 </body>
 </html>
